@@ -16,16 +16,25 @@
                             light: '#f8fafc',
                             accent: '#3b82f6'
                         }
+                    },
+                    animation: {
+                        'infinite-scroll': 'infiniteScroll 30s linear infinite',
+                    },
+                    keyframes: {
+                        infiniteScroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
                     }                   
                 }
             }
         }
     </script>
     <style>
-        /* Pausa la animación cuando el mouse pasa sobre el carrusel 
+        /* Pausa la animación cuando el mouse pasa sobre el carrusel */
         .group:hover .animate-infinite-scroll {
             animation-play-state: paused;
-        }*/
+        }
 
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -35,6 +44,7 @@
             scrollbar-width: none;
         }
 
+        /*
         @media (min-width: 768px) {
             .carousel-track {
                 display: flex;
@@ -53,7 +63,7 @@
             .project-card {
                 scroll-snap-align: start;
             }
-        }
+        }*/
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
@@ -86,7 +96,7 @@
             <!-- Fotografía de ejemplo -->
             <div class="flex justify-center md:justify-start">
                 <div class="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl bg-slate-900">
-                    <img src="images/profile_pic_1.jpeg" 
+                    <img src="images/profile_pic_2.jpeg" 
                          alt="Mi fotografía de perfil" 
                          class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
                 </div>
@@ -123,15 +133,15 @@
             </div>
 
             <!-- Carrusel -->
-            <div id="carousel-container" class="relative w-full overflow-hidden group py-2 no-scrollbar">
+            <div id="carousel-container" class="relative w-full overflow-hidden group py-2 px-4 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
 
                 <div class="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
                 <div class="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
 
-                <div id="carousel-track" class="carousel-track gap-6 w-max">
+                <div id="carousel-track" class="carousel-track flex gap-6 w-max animate-infinite-scroll">
                     
                     <!-- Proyecto 1 -->
-                    <div class="project-card w-[280px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p1-title">Cuadrao App</h3>
@@ -152,7 +162,7 @@
                     </div>
 
                     <!-- Proyecto 2 -->
-                    <div class="project-card w-[280px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p2-title">Central telefonica en la nube</h3>
@@ -173,7 +183,7 @@
                     </div>
 
                     <!-- Proyecto 3 -->
-                    <div class="project-card w-[280px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p3-title">API con enfoque RAG utilizando IA</h3>
@@ -201,7 +211,7 @@
             <div class="space-y-2 max-w-md mx-auto">
                 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white" data-i18n="contact-title">¿Hablamos?</h2>
                 <p class="text-slate-400 text-sm" data-i18n="contact-subtitle">
-                    Estoy abierto a nuevas oportunidades laborales, colaboraciones o consultas de clientes. Escríbeme y te responderé a la brevedad.
+                    Abierto a oportunidades laborales, consultoría a clientes, colaboraciones, soluciones para tu emprendimiento. Escríbeme y te responderé a la brevedad.
                 </p>
             </div>
 
@@ -238,7 +248,7 @@
                 "nav-contact": "Contacto",
                 "badge-status": "Disponible para nuevos proyectos",
                 "hero-greeting": "Hola, soy",
-                "hero-desc": "Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas.",
+                "hero-desc": "Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas. Sistemas contables, aplicaciones web y soluciones en la nube son mi especialidad. Siempre busco aprender y aplicar nuevas tecnologías para ofrecer resultados de alta calidad.",
                 "projects-title": "Proyectos Relevantes",
                 "projects-subtitle": "Una selección de mis trabajos más recientes. (Coloca el cursor encima para pausar)",
                 "p1-title": "Cuadrao App",
@@ -249,7 +259,7 @@
                 "p3-desc": "API de inteligencia artificial con enfoque RAG (Retrieval-Augmented Generation) para mejorar la precisión y relevancia de las respuestas generadas por modelos de lenguaje.",
                 "view-project": "Ver proyecto",
                 "contact-title": "¿Hablamos?",
-                "contact-subtitle": "Estoy abierto a nuevas oportunidades laborales, colaboraciones o consultas de clientes. Escríbeme y te responderé a la brevedad.",
+                "contact-subtitle": "Abierto a oportunidades laborales, consultoría a clientes, colaboraciones, soluciones para tu emprendimiento. Escríbeme y te responderé a la brevedad.",
                 "btn-email": "Enviar Correo",
                 "btn-whatsapp": "Escríbeme al WhatsApp",
                 "footer-text": "Diseñado de forma simple y moderna."
@@ -260,7 +270,7 @@
                 "nav-contact": "Contact",
                 "badge-status": "Available for new projects",
                 "hero-greeting": "Hi, I'm",
-                "hero-desc": "I am a professional passionate about creating efficient, clean, and user-centered digital solutions. I transform complex ideas into fast and minimalist web experiences.",
+                "hero-desc": "I am a professional passionate about creating efficient, clean, and user-centered digital solutions. Accounting systems, web applications, and cloud solutions are my specialty. I always seek to learn and apply new technologies to deliver high-quality results.",
                 "projects-title": "Relevant Projects",
                 "projects-subtitle": "A selection of my most recent works. (Hover over to pause)",
                 "p1-title": "Cuadrao App",
@@ -271,7 +281,7 @@
                 "p3-desc": "AI API with RAG (Retrieval-Augmented Generation) focus to improve the accuracy and relevance of responses generated by language models.",
                 "view-project": "View project",
                 "contact-title": "Let's talk?",
-                "contact-subtitle": "I am open to new job opportunities, collaborations, or client inquiries. Write to me and I will reply shortly.",
+                "contact-subtitle": "Open to job opportunities, collaborations or client inquiries. Write to me and I will reply shortly.",
                 "btn-email": "Send Email",
                 "btn-whatsapp": "Text me on WhatsApp",
                 "footer-text": "Designed simply and modernly."
@@ -301,8 +311,8 @@
         });
 
         // --- 2. LÓGICA DEL CARRUSEL (Desktop Auto-scroll, Mobile Swipe) ---
-        const track = document.getElementById('carousel-track');
-        const container = document.getElementById('carousel-container');
+        //const track = document.getElementById('carousel-track');
+        //const container = document.getElementById('carousel-container');
         let animationId;
         let currentTransform = 0;
         let isPaused = false;
@@ -316,6 +326,7 @@
             });
         }
 
+        /*
         function animate() {
             if (window.innerWidth < 768) return; // Detener animación JS en móviles
             if (!isPaused) {
@@ -331,13 +342,14 @@
             }
             animationId = requestAnimationFrame(animate);
         }
-
+        */
         // Eventos para pausar en Desktop
-        container.addEventListener('mouseenter', () => isPaused = true);
-        container.addEventListener('mouseleave', () => isPaused = false);
-        animate();
+        //container.addEventListener('mouseenter', () => isPaused = true);
+        //container.addEventListener('mouseleave', () => isPaused = false);
+        //animate();
 
         // Ajustar en caso de cambiar el tamaño de la ventana
+       /*
         window.addEventListener('resize', () => {
             cancelAnimationFrame(animationId);
             if (window.innerWidth >= 768) {
@@ -346,7 +358,7 @@
                 track.style.transform = 'none'; // Resetear transformación en móvil
             }
         });
-
+        */
     </script>
 </body>
 </html>
