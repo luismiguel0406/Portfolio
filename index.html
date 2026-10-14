@@ -16,16 +16,7 @@
                             light: '#f8fafc',
                             accent: '#3b82f6'
                         }
-                    },
-                    animation: {
-                        'infinite-scroll': 'infiniteScroll 25s linear infinite',
-                    },
-                    keyframes: {
-                        infiniteScroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    }
+                    }                   
                 }
             }
         }
@@ -132,12 +123,12 @@
             </div>
 
             <!-- Carrusel -->
-            <div id="carousel-track" class="carousel-track gap-6 w-max">
+            <div id="carousel-container" class="relative w-full overflow-hidden group py-2 no-scrollbar">
 
-                <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
-                <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                <div class="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                <div class="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="flex gap-6 w-max animate-infinite-scroll">
+                <div id="carousel-track" class="carousel-track gap-6 w-max">
                     
                     <!-- Proyecto 1 -->
                     <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
