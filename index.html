@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luis Del orbe - Portafolio</title>
+    <title>Tu Nombre - Portafolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,26 +16,13 @@
                             light: '#f8fafc',
                             accent: '#3b82f6'
                         }
-                    },
-                    animation: {
-                        'infinite-scroll': 'infiniteScroll 30s linear infinite',
-                    },
-                    keyframes: {
-                        infiniteScroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    }                   
+                    }
                 }
             }
         }
     </script>
     <style>
-        /* Pausa la animación cuando el mouse pasa sobre el carrusel */
-        .group:hover .animate-infinite-scroll {
-            animation-play-state: paused;
-        }
-
+        /* Ocultar barra de desplazamiento manteniendo funcionalidad */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -43,27 +30,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-
-        /*
-        @media (min-width: 768px) {
-            .carousel-track {
-                display: flex;
-                will-change: transform;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .carousel-track {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-            }
-            .project-card {
-                scroll-snap-align: start;
-            }
-        }*/
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
@@ -71,7 +37,7 @@
     <!-- HEADER / NAVEGACIÓN -->
     <header class="fixed top-0 left-0 w-full bg-slate-950/85 backdrop-blur-md border-b border-slate-800 z-50">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg tracking-tight">Luis Del orbe<span class="text-blue-500">.dev</span></span>
+            <span class="font-bold text-lg tracking-tight">TuNombre<span class="text-blue-500">.dev</span></span>
             
             <div class="flex items-center gap-6">
                 <nav class="hidden sm:flex gap-6 text-sm text-slate-400">
@@ -93,68 +59,63 @@
 
         <!-- SECCIÓN INICIO / SOBRE MÍ -->
         <section id="sobre-mi" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pt-8">
-            <!-- Fotografía de ejemplo -->
             <div class="flex justify-center md:justify-start">
                 <div class="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl bg-slate-900">
-                    <img src="images/profile_pic_2.jpeg" 
-                         alt="Mi fotografía de perfil" 
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+                         alt="Tu Fotografía" 
                          class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
                 </div>
             </div>
 
-            <!-- Introducción -->
             <div class="md:col-span-2 space-y-4 text-center md:text-left">
                 <div class="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium rounded-full" data-i18n="badge-status">
                     Disponible para nuevos proyectos
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-                    <span data-i18n="hero-greeting">Hola, soy</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Luis Del orbe</span>
+                    <span data-i18n="hero-greeting">Hola, soy</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Tu Nombre</span>
                 </h1>
                 <p class="text-slate-400 text-base leading-relaxed" data-i18n="hero-desc">
                     Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas.
-                    Sistemas contables, aplicaciones web y soluciones en la nube son mi especialidad. Siempre busco aprender y aplicar nuevas tecnologías para ofrecer resultados de alta calidad.
                 </p>
                 <div class="flex flex-wrap gap-3 justify-center md:justify-start pt-2">
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">Python</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">React</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">AI Solutions</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">AWS Services</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">Docker</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">Cloud Computing</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">C#</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">React / Next.js</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">Tailwind CSS</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-md">UI/UX Design</span>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN PROYECTOS -->
-        <section id="proyectos" class="space-y-8 overflow-hidden">
+        <section id="proyectos" class="space-y-8">
             <div class="border-b border-slate-800 pb-4">
                 <h2 class="text-2xl font-bold tracking-tight text-white" data-i18n="projects-title">Proyectos Relevantes</h2>
-                <p class="text-slate-400 text-sm" data-i18n="projects-subtitle">Una selección de mis trabajos más recientes. (Coloca el cursor encima para pausar)</p>
+                <p class="text-slate-400 text-sm" data-i18n="projects-subtitle">Una selección de mis trabajos más recientes. (Desliza con el dedo o pausa con el cursor)</p>
             </div>
 
-            <!-- Carrusel -->
-            <div id="carousel-container" class="relative w-full overflow-hidden group py-2 px-4 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
-
+            <!-- Contenedor del Carrusel Táctil e Interactivo -->
+            <div id="carouselWrapper" class="relative w-full py-2">
+                
+                <!-- Degradados laterales sutiles (solo desktop) -->
                 <div class="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
                 <div class="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
 
-                <div id="carousel-track" class="carousel-track flex gap-6 w-max animate-infinite-scroll">
+                <!-- Pista del carrusel con soporte nativo de scroll y snap -->
+                <div id="carouselTrack" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-1">
                     
                     <!-- Proyecto 1 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-semibold text-lg text-white" data-i18n="p1-title">Cuadrao App</h3>
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p1-title">Plataforma E-commerce</h3>
                                 <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2026</span>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p1-desc">
-                                Aplicacion movil orientada a Colmados y ventas para pequeñas empresas, con sincronización en la nube y reportes en tiempo real.
+                                Tienda virtual optimizada para alto rendimiento, pasarela de pagos integrada y panel de administración personalizado.
                             </p>
                         </div>
                         <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
                             <div class="flex gap-2 text-xs text-slate-500">
-                                <span>Flet - Python</span><span>•</span><span>Django</span>
+                                <span>React</span><span>•</span><span>Tailwind</span>
                             </div>
                             <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
                                 <span data-i18n="view-project">Ver proyecto</span> &rarr;
@@ -163,19 +124,19 @@
                     </div>
 
                     <!-- Proyecto 2 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-semibold text-lg text-white" data-i18n="p2-title">Central telefonica en la nube</h3>
-                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2026</span>
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p2-title">Dashboard Analítico</h3>
+                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2025</span>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p2-desc">
-                                Infraestrutura de central telefonica en la nube con funcionalidades avanzadas de gestión de llamadas, grabación y análisis de datos.
+                                Panel de control en tiempo real para visualización de métricas de negocio con gráficos interactivos y modo oscuro.
                             </p>
                         </div>
                         <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
                             <div class="flex gap-2 text-xs text-slate-500">
-                                <span>Linux</span><span>•</span><span>VPS</span><span>•</span><span>Cloud</span>
+                                <span>TypeScript</span><span>•</span><span>Next.js</span>
                             </div>
                             <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
                                 <span data-i18n="view-project">Ver proyecto</span> &rarr;
@@ -184,25 +145,26 @@
                     </div>
 
                     <!-- Proyecto 3 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
-                                <h3 class="font-semibold text-lg text-white" data-i18n="p3-title">API con enfoque RAG utilizando IA</h3>
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p3-title">App de Gestión IA</h3>
                                 <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2026</span>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p3-desc">
-                                API de inteligencia artificial con enfoque RAG (Retrieval-Augmented Generation) para mejorar la precisión y relevancia de las respuestas generadas por modelos de lenguaje.
+                                Herramienta SaaS impulsada por inteligencia artificial para la automatización de flujos de trabajo corporativos.
                             </p>
                         </div>
                         <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
                             <div class="flex gap-2 text-xs text-slate-500">
-                                <span>Python</span><span>•</span><span>AWS</span>
+                                <span>Python</span><span>•</span><span>Tailwind</span>
                             </div>
                             <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
                                 <span data-i18n="view-project">Ver proyecto</span> &rarr;
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -212,20 +174,18 @@
             <div class="space-y-2 max-w-md mx-auto">
                 <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white" data-i18n="contact-title">¿Hablamos?</h2>
                 <p class="text-slate-400 text-sm" data-i18n="contact-subtitle">
-                    Abierto a oportunidades laborales, consultoría a clientes, colaboraciones, soluciones para tu emprendimiento. Escríbeme y te responderé a la brevedad.
+                    Estoy abierto a nuevas oportunidades laborales, colaboraciones o consultas de clientes. Escríbeme y te responderé a la brevedad.
                 </p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-4 pt-2">
-                <!-- Botón Correo -->
-                <a href="mailto:luismiguel0406@gmail.com" 
+                <a href="mailto:tu-correo@ejemplo.com" 
                    class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white text-sm font-medium px-5 py-3 rounded-xl transition shadow-lg">
                     <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     <span data-i18n="btn-email">Enviar Correo</span>
                 </a>
 
-                <!-- Botón WhatsApp -->
-                <a href="https://wa.me/18492692906" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/tu-numero-con-codigo-de-pais" target="_blank" rel="noopener noreferrer"
                    class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-950/50">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.448 3.481 5.434 3.479 8.62-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                     <span data-i18n="btn-whatsapp">Escríbeme al WhatsApp</span>
@@ -237,54 +197,39 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-600">
-        <p>&copy; 2026 Luis Del orbe. V1.0 <span data-i18n="footer-text">Diseñado de forma simple y moderna.</span></p>
+        <p>&copy; 2026 Tu Nombre. <span data-i18n="footer-text">Diseñado de forma simple y moderna.</span></p>
     </footer>
 
-    <!-- SCRIPT DE TRADUCCIÓN -->
+    <!-- SCRIPTS (TRADUCCIÓN Y CARRUSEL TÁCTIL AUTOMÁTICO) -->
     <script>
+        // --- 1. TRADUCCIÓN ---
         const translations = {
             es: {
-                "nav-about": "Sobre mí",
-                "nav-projects": "Proyectos",
-                "nav-contact": "Contacto",
-                "badge-status": "Disponible para nuevos proyectos",
-                "hero-greeting": "Hola, soy",
-                "hero-desc": "Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas. Sistemas contables, aplicaciones web y soluciones en la nube son mi especialidad. Siempre busco aprender y aplicar nuevas tecnologías para ofrecer resultados de alta calidad.",
+                "nav-about": "Sobre mí", "nav-projects": "Proyectos", "nav-contact": "Contacto",
+                "badge-status": "Disponible para nuevos proyectos", "hero-greeting": "Hola, soy",
+                "hero-desc": "Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas.",
                 "projects-title": "Proyectos Relevantes",
-                "projects-subtitle": "Una selección de mis trabajos más recientes. (Coloca el cursor encima para pausar)",
-                "p1-title": "Cuadrao App",
-                "p1-desc": "Aplicacion movil orientada a Colmados y ventas para pequeñas empresas, con sincronización en la nube y reportes en tiempo real.",
-                "p2-title": "Central telefonica en la nube",
-                "p2-desc": "Infraestrutura de central telefonica en la nube con funcionalidades avanzadas de gestión de llamadas, grabación y análisis de datos.",
-                "p3-title": "API con enfoque RAG utilizando IA",
-                "p3-desc": "API de inteligencia artificial con enfoque RAG (Retrieval-Augmented Generation) para mejorar la precisión y relevancia de las respuestas generadas por modelos de lenguaje.",
-                "view-project": "Ver proyecto",
-                "contact-title": "¿Hablamos?",
-                "contact-subtitle": "Abierto a oportunidades laborales, consultoría a clientes, colaboraciones, soluciones para tu emprendimiento. Escríbeme y te responderé a la brevedad.",
-                "btn-email": "Enviar Correo",
-                "btn-whatsapp": "Escríbeme al WhatsApp",
+                "projects-subtitle": "Una selección de mis trabajos más recientes. (Desliza con el dedo o pausa con el cursor)",
+                "p1-title": "Plataforma E-commerce", "p1-desc": "Tienda virtual optimizada para alto rendimiento, pasarela de pagos integrada y panel de administración personalizado.",
+                "p2-title": "Dashboard Analítico", "p2-desc": "Panel de control en tiempo real para visualización de métricas de negocio con gráficos interactivos y modo oscuro.",
+                "p3-title": "App de Gestión IA", "p3-desc": "Herramienta SaaS impulsada por inteligencia artificial para la automatización de flujos de trabajo corporativos.",
+                "view-project": "Ver proyecto", "contact-title": "¿Hablamos?",
+                "contact-subtitle": "Estoy abierto a nuevas oportunidades laborales, colaboraciones o consultas de clientes. Escríbeme y te responderé a la brevedad.",
+                "btn-email": "Enviar Correo", "btn-whatsapp": "Escríbeme al WhatsApp",
                 "footer-text": "Diseñado de forma simple y moderna."
             },
             en: {
-                "nav-about": "About me",
-                "nav-projects": "Projects",
-                "nav-contact": "Contact",
-                "badge-status": "Available for new projects",
-                "hero-greeting": "Hi, I'm",
-                "hero-desc": "I am a professional passionate about creating efficient, clean, and user-centered digital solutions. Accounting systems, web applications, and cloud solutions are my specialty. I always seek to learn and apply new technologies to deliver high-quality results.",
+                "nav-about": "About me", "nav-projects": "Projects", "nav-contact": "Contact",
+                "badge-status": "Available for new projects", "hero-greeting": "Hi, I'm",
+                "hero-desc": "I am a professional passionate about creating efficient, clean, and user-centered digital solutions. I transform complex ideas into fast and minimalist web experiences.",
                 "projects-title": "Relevant Projects",
-                "projects-subtitle": "A selection of my most recent works. (Hover over to pause)",
-                "p1-title": "Cuadrao App",
-                "p1-desc": "Mobile application oriented towards small businesses, with cloud synchronization and real-time reporting.",
-                "p2-title": "Cloud-based Phone System",
-                "p2-desc": "Cloud infrastructure for phone systems with advanced call management, recording, and data analysis features.",
-                "p3-title": "RAG-powered AI API",
-                "p3-desc": "AI API with RAG (Retrieval-Augmented Generation) focus to improve the accuracy and relevance of responses generated by language models.",
-                "view-project": "View project",
-                "contact-title": "Let's talk?",
-                "contact-subtitle": "Open to job opportunities, collaborations or client inquiries. Write to me and I will reply shortly.",
-                "btn-email": "Send Email",
-                "btn-whatsapp": "Text me on WhatsApp",
+                "projects-subtitle": "A selection of my most recent works. (Swipe with your finger or hover to pause)",
+                "p1-title": "E-commerce Platform", "p1-desc": "Virtual store optimized for high performance, integrated payment gateway, and customized administration panel.",
+                "p2-title": "Analytics Dashboard", "p2-desc": "Real-time control panel for business metrics visualization with interactive charts and dark mode.",
+                "p3-title": "AI Management App", "p3-desc": "SaaS tool powered by artificial intelligence for the automation of corporate workflows.",
+                "view-project": "View project", "contact-title": "Let's talk?",
+                "contact-subtitle": "I am open to new job opportunities, collaborations, or client inquiries. Write to me and I will reply shortly.",
+                "btn-email": "Send Email", "btn-whatsapp": "Text me on WhatsApp",
                 "footer-text": "Designed simply and modernly."
             }
         };
@@ -292,74 +237,63 @@
         let currentLang = 'es';
         const langToggleBtn = document.getElementById('langToggle');
         const langTextSpan = document.getElementById('langText');
-        
-        // Función para actualizar el contenido según el idioma seleccionado
-        const updateContent = () => {
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            langTextSpan.textContent = currentLang === 'es' ? 'EN' : 'ES';
+            document.documentElement.lang = currentLang;
+
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
                     element.textContent = translations[currentLang][key];
                 }
             });
+        });
+
+        // --- 2. CARRUSEL INTELIGENTE (Auto-scroll + Swipe Táctil Nativo) ---
+        const track = document.getElementById('carouselTrack');
+        const wrapper = document.getElementById('carouselWrapper');
+        
+        let autoScrollTimer;
+        let isUserInteracting = false;
+
+        const getCardWidth = () => {
+            const card = track.querySelector('.project-card');
+            return card ? card.offsetWidth + 24 : 324; // Ancho de tarjeta + gap (24px)
         };
 
-        langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'es' ? 'en' : 'es';          
-            // Cambiar etiqueta del botón (si estamos en español, mostramos "EN" para cambiar a inglés, y viceversa)
-            langTextSpan.textContent = currentLang === 'es' ? 'EN' : 'ES';
-            document.documentElement.lang = currentLang;
-            updateContent();
-        });
-
-        // --- 2. LÓGICA DEL CARRUSEL (Desktop Auto-scroll, Mobile Swipe) ---
-        //const track = document.getElementById('carousel-track');
-        //const container = document.getElementById('carousel-container');
-        let animationId;
-        let currentTransform = 0;
-        let isPaused = false;
-
-        // Clonar elementos para el efecto infinito (solo en desktop)
-        const cards = track.querySelectorAll('.project-card');
-        if (window.innerWidth >= 768) {
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                track.appendChild(clone);
-            });
-        }
-
-        /*
-        function animate() {
-            if (window.innerWidth < 768) return; // Detener animación JS en móviles
-            if (!isPaused) {
-                currentTransform -= 1; // Velocidad de la animación (píxeles por frame)
-                
-                // Si la mitad del track (los originales) ha pasado, reiniciamos suavemente
-                const halfWidth = track.scrollWidth / 2;
-                if (Math.abs(currentTransform) >= halfWidth) {
-                    currentTransform = 0;
+        // Función de desplazamiento automático suave
+        const startAutoScroll = () => {
+            stopAutoScroll();
+            autoScrollTimer = setInterval(() => {
+                if (!isUserInteracting) {
+                    // Si llega al final, vuelve al inicio suavemente; de lo contrario, avanza una tarjeta
+                    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+                        track.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+                    }
                 }
-                
-                track.style.transform = `translateX(${currentTransform}px)`;
-            }
-            animationId = requestAnimationFrame(animate);
-        }
-        */
-        // Eventos para pausar en Desktop
-        //container.addEventListener('mouseenter', () => isPaused = true);
-        //container.addEventListener('mouseleave', () => isPaused = false);
-        //animate();
+            }, 3000); // Avanza cada 3 segundos
+        };
 
-        // Ajustar en caso de cambiar el tamaño de la ventana
-       /*
-        window.addEventListener('resize', () => {
-            cancelAnimationFrame(animationId);
-            if (window.innerWidth >= 768) {
-                animate();
-            } else {
-                track.style.transform = 'none'; // Resetear transformación en móvil
-            }
-        });
-        */
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollTimer);
+        };
+
+        // Detectar cuando el usuario interactúa (pone el mouse o desliza con el dedo)
+        wrapper.addEventListener('mouseenter', () => { isUserInteracting = true; stopAutoScroll(); });
+        wrapper.addEventListener('mouseleave', () => { isUserInteracting = false; startAutoScroll(); });
+        
+        wrapper.addEventListener('touchstart', () => { isUserInteracting = true; stopAutoScroll(); }, { passive: true });
+        wrapper.addEventListener('touchend', () => {
+            // Espera un momento antes de reanudar el auto-scroll tras soltar el dedo
+            setTimeout(() => { isUserInteracting = false; startAutoScroll(); }, 4000);
+        }, { passive: true });
+
+        // Iniciar el carrusel automático al cargar
+        startAutoScroll();
     </script>
 </body>
 </html>
