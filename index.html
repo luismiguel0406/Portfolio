@@ -16,19 +16,40 @@
                             light: '#f8fafc',
                             accent: '#3b82f6'
                         }
+                    },
+                    animation: {
+                        'infinite-scroll': 'infiniteScroll 25s linear infinite',
+                    },
+                    keyframes: {
+                        infiniteScroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Ocultar barra de desplazamiento manteniendo funcionalidad */
+        /* Ocultar barra de desplazamiento */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+
+        /* Pausa la animación cuando el mouse pasa por encima en computadoras */
+        @media (min-width: 768px) {
+            .carousel-wrapper:hover .animate-infinite-scroll {
+                animation-play-state: paused;
+            }
+        }
+
+        /* Clases para el control de pausa táctil en móviles */
+        .paused {
+            animation-play-state: paused !important;
         }
     </style>
 </head>
@@ -86,24 +107,25 @@
         </section>
 
         <!-- SECCIÓN PROYECTOS -->
-        <section id="proyectos" class="space-y-8">
+        <section id="proyectos" class="space-y-8 overflow-hidden">
             <div class="border-b border-slate-800 pb-4">
                 <h2 class="text-2xl font-bold tracking-tight text-white" data-i18n="projects-title">Proyectos Relevantes</h2>
-                <p class="text-slate-400 text-sm" data-i18n="projects-subtitle">Una selección de mis trabajos más recientes. (Desliza con el dedo o pausa con el cursor)</p>
+                <p class="text-slate-400 text-sm" data-i18n="projects-subtitle">Una selección de mis trabajos más recientes.</p>
             </div>
 
-            <!-- Contenedor del Carrusel Táctil e Interactivo -->
-            <div id="carouselWrapper" class="relative w-full py-2">
+            <!-- Contenedor del Carrusel Infinito con soporte táctil -->
+            <div id="carouselWrapper" class="carousel-wrapper relative w-full overflow-x-auto no-scrollbar py-2" style="-webkit-overflow-scrolling: touch;">
                 
-                <!-- Degradados laterales sutiles (solo desktop) -->
-                <div class="hidden md:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
-                <div class="hidden md:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                <!-- Degradados laterales sutiles -->
+                <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
 
-                <!-- Pista del carrusel con soporte nativo de scroll y snap -->
-                <div id="carouselTrack" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-1">
+                <!-- Pista con animación continua de scroll infinito -->
+                <div id="carouselTrack" class="flex gap-6 w-max animate-infinite-scroll">
                     
+                    <!-- GRUPO ORIGINAL DE 3 PROYECTOS -->
                     <!-- Proyecto 1 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p1-title">Plataforma E-commerce</h3>
@@ -124,7 +146,7 @@
                     </div>
 
                     <!-- Proyecto 2 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p2-title">Dashboard Analítico</h3>
@@ -145,7 +167,72 @@
                     </div>
 
                     <!-- Proyecto 3 -->
-                    <div class="project-card w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0 snap-start">
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p3-title">App de Gestión IA</h3>
+                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2026</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p3-desc">
+                                Herramienta SaaS impulsada por inteligencia artificial para la automatización de flujos de trabajo corporativos.
+                            </p>
+                        </div>
+                        <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
+                            <div class="flex gap-2 text-xs text-slate-500">
+                                <span>Python</span><span>•</span><span>Tailwind</span>
+                            </div>
+                            <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                                <span data-i18n="view-project">Ver proyecto</span> &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- CLONES PARA EL BUCLE INFINITO SUAVE -->
+                    <!-- Proyecto 1 (Clon) -->
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p1-title">Plataforma E-commerce</h3>
+                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2026</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p1-desc">
+                                Tienda virtual optimizada para alto rendimiento, pasarela de pagos integrada y panel de administración personalizado.
+                            </p>
+                        </div>
+                        <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
+                            <div class="flex gap-2 text-xs text-slate-500">
+                                <span>React</span><span>•</span><span>Tailwind</span>
+                            </div>
+                            <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                                <span data-i18n="view-project">Ver proyecto</span> &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 (Clon) -->
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-semibold text-lg text-white" data-i18n="p2-title">Dashboard Analítico</h3>
+                                <span class="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded">2025</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed" data-i18n="p2-desc">
+                                Panel de control en tiempo real para visualización de métricas de negocio con gráficos interactivos y modo oscuro.
+                            </p>
+                        </div>
+                        <div class="pt-6 flex items-center justify-between mt-4 border-t border-slate-800/60">
+                            <div class="flex gap-2 text-xs text-slate-500">
+                                <span>TypeScript</span><span>•</span><span>Next.js</span>
+                            </div>
+                            <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                                <span data-i18n="view-project">Ver proyecto</span> &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 (Clon) -->
+                    <div class="w-[300px] sm:w-[350px] bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition flex flex-col justify-between shrink-0">
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <h3 class="font-semibold text-lg text-white" data-i18n="p3-title">App de Gestión IA</h3>
@@ -200,7 +287,7 @@
         <p>&copy; 2026 Tu Nombre. <span data-i18n="footer-text">Diseñado de forma simple y moderna.</span></p>
     </footer>
 
-    <!-- SCRIPTS (TRADUCCIÓN Y CARRUSEL TÁCTIL AUTOMÁTICO) -->
+    <!-- SCRIPTS (TRADUCCIÓN Y PAUSA TÁCTIL PARA MÓVILES) -->
     <script>
         // --- 1. TRADUCCIÓN ---
         const translations = {
@@ -209,7 +296,7 @@
                 "badge-status": "Disponible para nuevos proyectos", "hero-greeting": "Hola, soy",
                 "hero-desc": "Soy un profesional apasionado por crear soluciones digitales eficientes, limpias y centradas en el usuario. Transformo ideas complejas en experiencias web rápidas y minimalistas.",
                 "projects-title": "Proyectos Relevantes",
-                "projects-subtitle": "Una selección de mis trabajos más recientes. (Desliza con el dedo o pausa con el cursor)",
+                "projects-subtitle": "Una selección de mis trabajos más recientes. (Mantén presionado o pausa con el cursor)",
                 "p1-title": "Plataforma E-commerce", "p1-desc": "Tienda virtual optimizada para alto rendimiento, pasarela de pagos integrada y panel de administración personalizado.",
                 "p2-title": "Dashboard Analítico", "p2-desc": "Panel de control en tiempo real para visualización de métricas de negocio con gráficos interactivos y modo oscuro.",
                 "p3-title": "App de Gestión IA", "p3-desc": "Herramienta SaaS impulsada por inteligencia artificial para la automatización de flujos de trabajo corporativos.",
@@ -223,7 +310,7 @@
                 "badge-status": "Available for new projects", "hero-greeting": "Hi, I'm",
                 "hero-desc": "I am a professional passionate about creating efficient, clean, and user-centered digital solutions. I transform complex ideas into fast and minimalist web experiences.",
                 "projects-title": "Relevant Projects",
-                "projects-subtitle": "A selection of my most recent works. (Swipe with your finger or hover to pause)",
+                "projects-subtitle": "A selection of my most recent works. (Press and hold or hover to pause)",
                 "p1-title": "E-commerce Platform", "p1-desc": "Virtual store optimized for high performance, integrated payment gateway, and customized administration panel.",
                 "p2-title": "Analytics Dashboard", "p2-desc": "Real-time control panel for business metrics visualization with interactive charts and dark mode.",
                 "p3-title": "AI Management App", "p3-desc": "SaaS tool powered by artificial intelligence for the automation of corporate workflows.",
@@ -251,49 +338,18 @@
             });
         });
 
-        // --- 2. CARRUSEL INTELIGENTE (Auto-scroll + Swipe Táctil Nativo) ---
+        // --- 2. CONTROL TÁCTIL PARA MÓVILES (Pausa al tocar con el dedo) ---
         const track = document.getElementById('carouselTrack');
-        const wrapper = document.getElementById('carouselWrapper');
-        
-        let autoScrollTimer;
-        let isUserInteracting = false;
 
-        const getCardWidth = () => {
-            const card = track.querySelector('.project-card');
-            return card ? card.offsetWidth + 24 : 324; // Ancho de tarjeta + gap (24px)
-        };
-
-        // Función de desplazamiento automático suave
-        const startAutoScroll = () => {
-            stopAutoScroll();
-            autoScrollTimer = setInterval(() => {
-                if (!isUserInteracting) {
-                    // Si llega al final, vuelve al inicio suavemente; de lo contrario, avanza una tarjeta
-                    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-                        track.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-                    }
-                }
-            }, 3000); // Avanza cada 3 segundos
-        };
-
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollTimer);
-        };
-
-        // Detectar cuando el usuario interactúa (pone el mouse o desliza con el dedo)
-        wrapper.addEventListener('mouseenter', () => { isUserInteracting = true; stopAutoScroll(); });
-        wrapper.addEventListener('mouseleave', () => { isUserInteracting = false; startAutoScroll(); });
-        
-        wrapper.addEventListener('touchstart', () => { isUserInteracting = true; stopAutoScroll(); }, { passive: true });
-        wrapper.addEventListener('touchend', () => {
-            // Espera un momento antes de reanudar el auto-scroll tras soltar el dedo
-            setTimeout(() => { isUserInteracting = false; startAutoScroll(); }, 4000);
+        // Al tocar la pantalla en celular, se pausa la animación infinita para permitir lectura cómoda
+        track.addEventListener('touchstart', () => {
+            track.classList.add('paused');
         }, { passive: true });
 
-        // Iniciar el carrusel automático al cargar
-        startAutoScroll();
+        // Al retirar el dedo, se reanuda la animación infinita
+        track.addEventListener('touchend', () => {
+            track.classList.remove('paused');
+        }, { passive: true });
     </script>
 </body>
 </html>
