@@ -88,6 +88,11 @@
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                         LinkedIn
                     </a>
+                    <a href="cv/Luis_Del_Orbe_CV_AI_Software_Engineer_ES.pdf" target="_blank" rel="noopener" data-cv
+                       class="inline-flex items-center gap-2 bg-white hover:bg-slate-200 text-slate-900 text-sm font-semibold px-4 py-2 rounded-xl transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
+                        <span data-i18n="btn-cv">Descargar CV</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -160,6 +165,12 @@
                     <span data-i18n="btn-email">Enviar correo</span>
                 </a>
 
+                <a href="cv/Luis_Del_Orbe_CV_AI_Software_Engineer_ES.pdf" target="_blank" rel="noopener" data-cv
+                   class="inline-flex items-center gap-2 bg-white hover:bg-slate-200 text-slate-900 text-sm font-semibold px-5 py-3 rounded-xl transition shadow-lg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
+                    <span data-i18n="btn-cv">Descargar CV</span>
+                </a>
+
                 <a href="https://www.linkedin.com/in/luisdelorbe04/" target="_blank" rel="noopener noreferrer"
                    class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-5 py-3 rounded-xl transition shadow-lg">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
@@ -203,6 +214,7 @@
             "contact-title": "Let's talk",
             "contact-subtitle": "Open to remote or on-site roles, and willing to relocate. Send me a message and I'll get back to you soon.",
             "btn-email": "Send email",
+            "btn-cv": "Download resume",
             "btn-whatsapp": "Message me on WhatsApp",
             "footer-text": "Simple, modern design."
         };
@@ -217,12 +229,19 @@
 
         const langTextSpan = document.getElementById('langText');
 
+        // El CV cambia según el idioma de la página.
+        const cvFiles = {
+            es: 'cv/Luis_Del_Orbe_CV_AI_Software_Engineer_ES.pdf',
+            en: 'cv/Luis_Del_Orbe_Resume_AI_Software_Engineer_EN.pdf'
+        };
+
         function applyLang(lang) {
             i18nElements.forEach(el => {
                 const text = translations[lang][el.getAttribute('data-i18n')];
                 if (text) el.textContent = text;
             });
             document.documentElement.lang = lang;
+            document.querySelectorAll('[data-cv]').forEach(a => { a.href = cvFiles[lang]; });
             langTextSpan.textContent = lang === 'es' ? 'EN' : 'ES';
             currentLang = lang;
         }
